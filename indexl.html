@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silver Lake Spa</title>
+
+    <!-- tailwind css cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://unpkg.com/heroicons@2.0.16/dist/24/solid.js"></script>
+
+
+    <style>
+        :root {
+            --primary-bg: #dde7e7;
+            --secondary-bg: #ffffff;
+            --primary-font: 'Segoe UI', sans-serif;
+            --accent-color: #25D366;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: var(--primary-font);
+        }
+
+        body {
+            position: relative;
+            z-index: 0;
+            background-color: #fff;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: 260px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            transition: right 0.3s ease-in-out;
+            z-index: 999;
+            padding: 20px;
+        }
+
+        .sidebar.open {
+            right: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            margin-bottom: 16px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.349);
+        }
+
+        .sidebar-close {
+            margin-bottom: 20px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .slider-bg {
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        
+    </style>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("open");
+        }
+        function closeSidebar() {
+            document.getElementById("sidebar").classList.remove("open");
+        }
+    </script>
+</head>
+
+<body>
+    <!-- wpp chat bot -->
+    <a href="https://wa.me/918812345678" target="_blank"
+        class="absolute left-7 md:left-10 bottom-50 md:bottom-10 rounded-2xl p-3 flex items-center gap-1 z-12">
+        <img class="rounded-full w-14 h-14"
+            src="https://i.pinimg.com/474x/ea/ef/ca/eaefcad3d9695ae94098674193faf554.jpg" alt="">
+    </a>
+
+    <!-- main header section -->
+    <div
+        class="border-b border-[#e1d9ff] shadow-[0_2px_4px_rgba(41,48,114,0.08)] py-2 pr-[20px] md:px-[30px] xl:pr-[70px]">
+
+        <div class="w-full max-w-[90rem] mx-auto flex items-center xl:gap-12 md:gap-2 gap-1">
+
+            <a href="/">
+                <img src="https://res.cloudinary.com/dojdau6b2/image/upload/v1752484589/WhatsApp_Image_2025-07-14_at_1.47.35_PM-removebg-preview_1_nufito.png"
+                    alt="Logo" width="200" height="50" />
+            </a>
+
+            <div class="hidden md:flex items-center ml-auto gap-2 md:gap-6">
+
+                <!-- Address Block -->
+                <div class="hover:text-[#293072] rounded-2xl p-3 flex items-center gap-1">
+                    <span class="text-[#293072] text-xl">📍</span>
+                    <span class="hidden md:inline text-[#293072] text-sm md:text-md lg:text-lg ">Anand Bazaar, Near Agarwal Namkeen</span>
+                </div>
+
+                <a href="tel:8887654321" class="hover:text-[#293072] rounded-2xl p-3 flex items-center gap-1">
+                    <span class="text-[#293072] text-2xl">📞</span>
+                    <span class="hidden md:inline text-[#293072] text-sm md:text-md lg:text-2xl">Call: 7400790049</span>
+                </a>
+            </div>
+
+            <!-- Sidebar Toggle -->
+            <button class="toggle-btn block md:hidden text-dark" onclick="toggleSidebar()">☰</button>
+        </div>
+    </div>
+
+    <!-- side header section -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-close" onclick="closeSidebar()">✖ Close</div>
+
+        <a href="#">👤 About Me</a>
+        <a href="#">🏆 Achievements</a>
+        <a href="#">⚙️ Settings</a>
+        <a href="#">🛟 Support</a>
+    </aside>
+
+    <!--  first section (Slider) -->
+    <div id="slider" class="relative w-full h-screen overflow-hidden">
+        <!-- Slides -->
+        <div class="absolute inset-0 transition-opacity duration-1000 slider-bg flex items-center justify-center"
+            style="background-image: url('https://indorecityspa.com/wp-content/uploads/2024/05/woman-relaxing-spa3-1.png');">
+            <div class="text-center text-white px-15 py-6 rounded-xl" style="background-color: #0000008f;">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Silver Lake Spa</h1>
+                <p class="text-lg md:text-2xl">Relax. Rejuvenate. Refresh.</p>
+
+                <a href="tel:8887654321"
+                    class="inline-block mt-7 bg-yellow-500 text-dark hover:bg-yellow-300 px-8 py-2 transition duration-300">
+                    <span class="text-xl font-semibold">Book Now</span>
+                </a>
+            </div>
+        </div>
+        <div class="absolute inset-0 transition-opacity duration-1000 slider-bg flex items-center justify-center"
+            style="background-image: url('https://indorecityspa.com/wp-content/uploads/2024/05/woman-relaxing-spa2.png');">
+            <div class="text-center text-white px-15 py-6 rounded-xl" style="background-color: #0000008f;">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Silver Lake Spa</h1>
+                <p class="text-lg md:text-2xl">Relax. Rejuvenate. Refresh.</p>
+
+                <a href="tel:8887654321"
+                    class="inline-block mt-7 bg-yellow-500 text-dark hover:bg-yellow-300 px-8 py-2 transition duration-300">
+                    <span class="text-xl font-semibold ">Book Now</span>
+                </a>
+            </div>
+        </div>
+        <!-- <div class="absolute inset-0 transition-opacity duration-1000 slider-bg opacity-0"
+            style="background-image: url('https://source.unsplash.com/1600x900/?wellness');"></div> -->
+    </div>
+
+    <footer class="" style="background-color: var(--primary-bg);">
+        <div class="w-full max-w-[90rem] mx-auto text-white text-center py-5 md:py-10">
+            <p class="text-lg md:text-3xl lg:text-5xl font-semibold text-gray-800">Call to book an appointment: <a
+                    href="tel:8887654321">7400790049</a> </p>
+        </div>
+    </footer>
+
+    <!-- second section -->
+    <div class="">
+        <div class="w-full max-w-[90rem] mx-auto flex flex-col md:flex-row p-10 md:p-20 justify-between gap-10">
+            <div class="w-full md:w-[40%] overflow-hidden">
+                <!-- Top Left Image -->
+                <img src="https://indorecityspa.com/wp-content/uploads/2024/05/woman-relaxing-spa3-1.png" alt="Top Left"
+                    class="w-full h-full md:w-40 md:h-40 object-cover rounded-lg shadow-lg" />
+
+                <!-- Bottom Right Image -->
+                <img src="https://indorecityspa.com/wp-content/uploads/2024/05/woman-relaxing-spa2.png"
+                    alt="Bottom Right"
+                    class="w-full h-full md:w-60 md:h-60 object-cover rounded-lg shadow-lg float-right mt-5 md:mt-0" />
+            </div>
+
+            <div class="w-full md:w-[50%] text-justify">
+                <h2 class="text-4xl font-bold mb-4">Welcome to Our Relaxation Space</h2>
+                <br>
+                <p class="text-lg max-w-2xl mx-auto text-gray-600">
+                    We offer services such as massages, body treatments, and hydrotherapy, as well as access to
+                    amenities such as saunas, steam rooms, and hot tubs. These services are designed to help individuals
+                    de-stress, detoxify, and improve their physical and mental well-being. Our spa provides a range of
+                    services including massages, body treatments, and hydrotherapy, along with access to amenities like
+                    saunas, steam rooms, and hot tubs. These offerings are crafted to assist individuals in reducing
+                    stress, detoxifying, and enhancing their overall physical and mental health.
+                </p>
+                <br>
+                <p class="text-lg max-w-2xl mx-auto text-gray-600">
+                    From luxurious massages and invigorating body treatments to soothing hydrotherapy sessions, our
+                    offerings are designed to cater to your every relaxation need. Additionally, enjoy access to our
+                    premium amenities such as tranquil saunas, revitalizing steam rooms, and blissful hot tubs.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- third section -->
+    <div class="py-16 bg-cover bg-center bg-no-repeat"
+        style="background-image: url('https://indorecityspa.com/wp-content/uploads/2024/05/woman-enjoying-stone-massage.png'); background-attachment: fixed;">
+
+        <div class="w-full max-w-[90rem] mx-auto py-4 md:py-10 px-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-7 gap-10 md:gap-2 text-center items-center">
+
+                    <!-- Stat 1 -->
+                    <div>
+                        <h2 class="text-4xl font-bold text-white">1050</h2>
+                        <p class="text-white font-semibold mt-2 text-3xl">Clients</p>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="bg-yellow-500 w-5 h-2 mx-auto"></div>
+
+                    <!-- Stat 2 -->
+                    <div>
+                        <h2 class="text-4xl font-bold text-white">90</h2>
+                        <p class="text-white font-semibold mt-2 text-3xl">Therapists</p>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="bg-yellow-500 w-5 h-2 mx-auto"></div>
+
+                    <!-- Stat 3 -->
+                    <div>
+                        <h2 class="text-4xl font-bold text-white">65</h2>
+                        <p class="text-white font-semibold mt-2 text-3xl">Procedures</p>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="bg-yellow-500 w-5 h-2 mx-auto"></div>
+
+                    <!-- Stat 4 -->
+                    <div>
+                        <h2 class="text-4xl font-bold text-white">540</h2>
+                        <p class="text-white font-semibold mt-2 text-3xl">Treatments</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- fourth section -->
+    <div class="bg-[#dde7e7]">
+        <div class="w-full max-w-[90rem] mx-auto py-30 px-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-center items-center ">
+
+                <!-- Stat 1 -->
+                <div
+                    class="py-[70px] group relative overflow-hidden rounded-full hover:bg-[#283838] border border-[#283838]">
+                    <a href="tel:8887654321"
+                        class="flex flex-col cursor-pointer gap-4 items-center text-[#283838] w-full h-full group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-10 md:w-30 h-10 md:h-30 transition duration-300 group-hover:text-white" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4 14s1-2 4-2 3 3 6 3 4-1 4-4-2-4-4-4-2-2-2-2H6a4 4 0 00-4 4v5z" />
+                        </svg>
+                        <h2 class="text-3xl font-bold">Body</h2>
+                        <p class="font-semibold text-xl">Massage & Treatment</p>
+                        <button
+                            class="border border-[#dde7e7] py-2 px-8 cursor-pointer font-semibold rounded transition duration-500 transform translate-y-16 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                            Book
+                        </button>
+
+                    </a>
+                </div>
+
+
+
+                <!-- Stat 2 -->
+                <div
+                    class="py-[70px] group relative overflow-hidden rounded-full hover:bg-[#283838] border border-[#283838]">
+                    <a href="tel:8887654321"
+                        class="flex flex-col cursor-pointer gap-4 items-center text-[#283838] w-full h-full group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-10 md:w-30 h-10 md:h-30 transition duration-300 group-hover:text-white" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 2a10 10 0 100 20 10 10 0 000-20zm-3 8a1 1 0 11-2 0 1 1 0 012 0zm8 0a1 1 0 11-2 0 1 1 0 012 0zm-8.5 5a5.5 5.5 0 0011 0h-11z" />
+                        </svg>
+                        <h2 class="text-3xl font-bold">Face</h2>
+                        <p class="font-semibold text-xl">Massage & Treatment</p>
+                        <button
+                            class="border border-[#dde7e7] py-2 px-8 cursor-pointer font-semibold rounded transition duration-500 transform translate-y-16 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                            Book
+                        </button>
+
+                    </a>
+                </div>
+
+
+                <!-- Stat 3 -->
+                <div
+                    class="py-[70px] group relative overflow-hidden rounded-full hover:bg-[#283838] border border-[#283838]">
+                    <a href="tel:8887654321"
+                        class="flex flex-col cursor-pointer gap-4 items-center text-[#283838] w-full h-full group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-10 md:w-30 h-10 md:h-30 transition duration-300 group-hover:text-white" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M7 11V5a1 1 0 112 0v6m2 0V3a1 1 0 112 0v8m2 0V7a1 1 0 112 0v4m2 0v2a7 7 0 11-14 0v-2" />
+                        </svg>
+                        <h2 class="text-3xl font-bold">Hands & Feet</h2>
+                        <p class="font-semibold text-xl">Massage & Treatment</p>
+                        <button
+                            class="border border-[#dde7e7] py-2 px-8 cursor-pointer font-semibold rounded transition duration-500 transform translate-y-16 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                            Book
+                        </button>
+
+                    </a>
+                </div>
+
+
+
+                <!-- Stat 4 -->
+                <div
+                    class="py-[70px] group relative overflow-hidden rounded-full hover:bg-[#283838] border border-[#283838]">
+                    <a href="tel:8887654321"
+                        class="flex flex-col cursor-pointer gap-4 items-center text-[#283838] w-full h-full group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-10 md:w-30 h-10 md:h-30 transition duration-300 group-hover:text-white" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 2.25c-.4 1.828-1.62 3.664-2.846 5.37-1.19 1.657-2.404 3.365-2.654 5.155a6.5 6.5 0 0012 0c-.25-1.79-1.464-3.498-2.654-5.155C13.62 5.914 12.4 4.078 12 2.25z" />
+                        </svg>
+
+                        <h2 class="text-3xl font-bold">Essential Oil</h2>
+                        <p class="font-semibold text-xl">Massage & Treatment</p>
+                        <button
+                            class="border border-[#dde7e7] py-2 px-8 cursor-pointer font-semibold rounded transition duration-500 transform translate-y-16 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                            Book
+                        </button>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- fifth section -->
+    <div>
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="flex flex-col gap-6">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="w-full md:w-[50%] h-[400px]">
+                        <img src="https://res.cloudinary.com/dojdau6b2/image/upload/v1752485736/IMG_20250714_144321_krsrbi.jpg"
+                            alt="Image 1" class="w-full h-full object-cover rounded-lg shadow-md" />
+                    </div>
+
+                    <div class="w-full md:w-[50%] h-[400px]">
+                        <img src="https://res.cloudinary.com/dojdau6b2/image/upload/v1752485734/IMG_20250714_144333_eem6pb.jpg"
+                            alt="Image 2" class="w-full h-full object-cover rounded-lg shadow-md" />
+                    </div>
+
+                </div>
+
+                <div class="">
+                    <video controls controlsList="nodownload" class="w-full h-full" oncontextmenu="return false">
+                        <source
+                            src="https://res.cloudinary.com/dojdau6b2/video/upload/v1752485704/WhatsApp_Video_2025-07-14_at_2.47.56_PM_buooap.mp4"
+                            type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- last section -->
+    <div class="w-full bg-gray-50">
+        <div class="w-full max-w-[90rem] mx-auto flex flex-col md:flex-row p-10 justify-between gap-10">
+
+            <!-- 🗺️ Left Side: Embedded Google Map -->
+            <div class="w-full md:w-[45%] h-[400px] rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.5760910174914!2d75.857725!3d22.712884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fc5cf01936ef%3A0xf3a68efb10f2e93!2sSilver%20Lake%20Spa!5e0!3m2!1sen!2sin!4v1720950000000!5m2!1sen!2sin"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <!-- 📝 Right Side: Text + Call Button -->
+            <div class="w-full md:w-[50%] text-center md:text-left flex flex-col justify-center">
+                <h2 class="text-4xl font-bold mb-4">Visit Silver Lake Spa</h2>
+                <p class="text-lg text-gray-600 mb-4">
+                    Come and experience the ultimate in relaxation and rejuvenation at our centrally located spa.
+                    Whether you're
+                    looking for a calming massage, steam therapy, or a full-body treatment, we’re here to serve you.
+                </p>
+                <p class="text-lg text-gray-600 mb-6">
+                    Find us on the map or call now to book your session. We look forward to welcoming you!
+                </p>
+
+                <!-- 📞 Call Button -->
+                <a href="tel:8887654321"
+                    class="inline-block bg-yellow-500 hover:bg-yellow-300 text-center text-[#293072] text-xl font-semibold px-6 py-3 rounded-2xl transition duration-300">
+                    📞 Call Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <footer class="" style="background-color: var(--primary-bg);">
+        <div class="w-full max-w-[90rem] mx-auto text-white text-center py-5 md:py-10">
+            <p class="text-lg md:text-3xl lg:text-5xl font-semibold text-gray-800">Call to book an appointment: <a
+                    href="tel:8887654321">7400790049</a> </p>
+        </div>
+    </footer>
+
+
+    <!-- Slider Script -->
+    <script>
+        const slides = document.querySelectorAll("#slider > div");
+        let index = 0;
+
+        function showSlide() {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? "1" : "0";
+            });
+            index = (index + 1) % slides.length;
+        }
+
+        setInterval(showSlide, 4000); // Change slide every 4 seconds
+        showSlide(); // Initial display
+    </script>
+
+
+
+</body>
+
+</html>
